@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+<h1>Nauczyciel:</h1>
+<div id="nauczyciel"></div><br><br>
+<h1>Uczeń:</h1>
+<div id="uczen"></div>
+</body>
+<script>
+    class Osoba {
+    constructor(imie, nazwisko){
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+    }
+}
+
+class Nauczyciel extends Osoba {
+    constructor(imie, nazwisko, nauczyciel_klasa, przedmiot){
+        super(imie, nazwisko);
+        this.nauczyciel_klasa = nauczyciel_klasa;
+        this.przedmiot = przedmiot;
+    }
+}
+
+class Uczen extends Osoba {
+    constructor(imie, nazwisko, klasa, nr_dziennik){
+        super(imie, nazwisko);
+        this.klasa = klasa;
+        this.nr_dziennik = nr_dziennik;
+    }
+}
+
+
+
+var nauczyciel = new Nauczyciel("Adam", "Fulara", "2PI", "Programowanie");
+var uczen = new Uczen("Adam", "Kowalski", "2PI", "1");
+document.getElementById('nauczyciel').innerHTML = "Imie nauczyciela: " + nauczyciel.imie + "<br> Nazwisko nauczyciela: " + nauczyciel.nazwisko + "<br> Klasa nauczyciela: " + nauczyciel.nauczyciel_klasa + "<br> Przedmiot nauczyciela: " + nauczyciel.przedmiot;
+document.getElementById('uczen').innerHTML = "Imie ucznia: " + uczen.imie + "<br> Nazwisko ucznia: " + uczen.nazwisko + "<br> Klasa ucznia: " + uczen.klasa + "<br> Numer w dzienniku:" + uczen.nr_dziennik;
+</script>
+</html>
